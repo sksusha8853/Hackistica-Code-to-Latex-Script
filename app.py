@@ -190,7 +190,6 @@ def analyse():
 
 
 
-
             if(a[0][0]==')'):
                 a[0] = a[0][1:]
                 break
