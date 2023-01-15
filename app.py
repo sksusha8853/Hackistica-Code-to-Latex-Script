@@ -38,6 +38,7 @@ def analyse():
         final_ans.append("\\date{January 2023}")
         final_ans.append("\n")
         final_ans.append("\\begin{document}")
+        final_ans.append("\\maketitle")
         final_ans.append("\n")
         final_ans.append("\n")
         final_ans.append("\\begin{algorithm}")
