@@ -74,8 +74,9 @@
         >
           Latex Script
         </h5>
+        <button onclick="copy()">Copy</button>
         <div
-          class="card-footer text-muted"
+          class="card-footer text-muted" id="textarea"
           style="background-color: rgb(207, 239, 252); margin-top: 10px"
         >
           {% for e in message %}
@@ -99,6 +100,11 @@
     function myFunction() {
       document.getElementById("myForm").reset();
     }
+    function copy() {
+    let textarea = document.getElementById("textarea");
+    textarea.select();
+    document.execCommand("copy");
+}
   </script>
 
   {% endblock %}
