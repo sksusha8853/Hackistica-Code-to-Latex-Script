@@ -104,14 +104,14 @@
         >
           LaTeX Script of pseudocode
         </h5>
-
         <div
           class="card-footer text-muted"
           
           style="background-color: rgb(199, 206, 209); margin-top: 10px"
+          
         >
           {% if message == "Input code is not in format as required, please change and retry." %}
-          <div>
+          <div id="editor1">
             
             <h3
               class="output"
@@ -128,6 +128,7 @@
             </h3>
           </div>
           {% else %} 
+          <div id="editor2"  contenteditable="true">
           {% for e in message %}
           <div>
             <h6
@@ -143,13 +144,15 @@
               {{e}}
             </h6>
           </div>
-          {% endfor %} {% endif %}
+          {% endfor %} 
+        </div>
+        {% endif %}
 
           <br />
         </div>
         <div class="button" style="text-align: leftr; padding: 10px">
           <button
-            onclick="copyToClipboard()"
+            onclick="CopyToClipboard()"
             class="btn btn-danger"
             style="
               padding: 10px;
@@ -180,32 +183,17 @@
     function myFunction() {
       document.getElementById("myForm").reset();
     }
-    function copyToClipboard() {
+    function CopyToClipboard() {
 
+var copyBoxElement = document.getElementById('editor2');
+copyBoxElement.contenteditable = true;
+copyBoxElement.focus();
+document.execCommand('selectAll');
+document.execCommand("copy");
+copyBoxElement.contenteditable = false;
+alert("Text has been copied")
+}
 
-      console.log("hello")
-      var copyText1 = document.getElementById("error");
-      var copyText2 = document.getElementById("pseudo");
-      console.log(copyText1);
-      console.log(copyText2);
-      // Select the text field
-      var copyText;
-      if(copyText1.size()>0){
-        copyText=copyText1;
-        
-      }
-      else{
-        copyText=copyText2;
-      }
-      copyText.select();
-      
-
-      // Copy the text inside the text field
-      // navigator.clipboard.writeText(copyText.value);
-      document.execCommand('copy');
-      // Alert the copied text
-      alert("Copied the text: " + copyText.value);
-    }
   </script>
 
   {% endblock %}
