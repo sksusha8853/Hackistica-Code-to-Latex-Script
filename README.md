@@ -39,6 +39,3 @@ The following points highlight some interesting and useful aspects of the projec
 
 4.Copy button provided to copy the latex code to the clipboard.
 
-
-## Deployed Link
-http://nhjakhar.pythonanywhere.com/
